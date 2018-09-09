@@ -1,0 +1,58 @@
+﻿<UserControl x:Name="userControl" x:Class="TuringMachine.Controls.CellControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TuringMachine.Controls"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             mc:Ignorable="d"             
+             d:DesignHeight="450" d:DesignWidth="800" BorderBrush="WhiteSmoke"
+             BorderThickness="2" Margin="2">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <local:MarkerTypeConverter x:Key="MarkerTypeConverter"/>
+        <local:NameConverter x:Key="NameConverter"/>
+    </UserControl.Resources>
+    <Button x:Name="clcr" Background="Transparent">
+        <StackPanel>
+            <StackPanel
+                x:Name="vsPan"
+                Orientation="Horizontal"  
+                    HorizontalAlignment="Center" VerticalAlignment="Center" IsHitTestVisible="False"
+                DataContext="{Binding  CurrentRuleState.ReferenceState, 
+                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                ElementName=userControl}"
+                 >
+                <TextBlock Text="{Binding NextQ,
+                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, 
+                                Converter={StaticResource NameConverter},
+                                ConverterParameter='Q'}" IsHitTestVisible="False"
+                       HorizontalAlignment="Center" FontSize="25"
+                        VerticalAlignment="Center" />
+                <TextBlock Text="{Binding SetMarker,
+                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsHitTestVisible="False" HorizontalAlignment="Center" FontSize="25"
+                        VerticalAlignment="Center" />
+                <fa:FontAwesome HorizontalAlignment="Center" 
+                        VerticalAlignment="Center" IsHitTestVisible="False"
+                        FontSize="25" Icon="{Binding Dir, 
+                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                    Converter={StaticResource MarkerTypeConverter}}"  />
+            </StackPanel>
+            <StackPanel x:Name="EditModePanel">
+                <StackPanel.Style>
+                    <Style TargetType="StackPanel">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding EditMode,
+                                Converter={StaticResource BooleanToVisibilityConverter},
+                                ElementName=userControl}" Value="Visible">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Style>
+                <TextBlock Text="Change rule" Visibility="Hidden" FontSize="20"/>
+                <TextBox x:Name="RuleInput" FontSize="20"/>
+            </StackPanel>
+        </StackPanel>
+    </Button>
+</UserControl>

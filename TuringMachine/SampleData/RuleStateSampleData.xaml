@@ -1,0 +1,20 @@
+﻿<Elements:RuleState xmlns:Elements="clr-namespace:TuringMachine.Elements"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib" Q="85">
+	<Elements:RuleState.Marker>
+		<System:Char/>
+	</Elements:RuleState.Marker>
+	<Elements:RuleState.Previous>
+		<Elements:State Dir="Left" NextQ="52">
+			<Elements:State.SetMarker>
+				<System:Char/>
+			</Elements:State.SetMarker>
+		</Elements:State>
+	</Elements:RuleState.Previous>
+	<Elements:RuleState.ReferenceState>
+		<Elements:State Dir="Down" NextQ="45">
+			<Elements:State.SetMarker>
+				<System:Char/>
+			</Elements:State.SetMarker>
+		</Elements:State>
+	</Elements:RuleState.ReferenceState>
+</Elements:RuleState>

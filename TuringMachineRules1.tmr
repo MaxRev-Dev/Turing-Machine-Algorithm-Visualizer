@@ -1,0 +1,83 @@
+[
+  {
+    "Q": 0,
+    "Marker": " ",
+    "ReferenceState": {
+      "MoveDirection": "Stop",
+      "SetupMarker": "1",
+      "NextQ": 1
+    }
+  },
+  {
+    "Q": 1,
+    "Marker": " ",
+    "ReferenceState": {
+      "MoveDirection": "Right",
+      "SetupMarker": "1",
+      "NextQ": 1
+    }
+  },
+  {
+    "Q": 2,
+    "Marker": " ",
+    "ReferenceState": {
+      "MoveDirection": "Right",
+      "SetupMarker": "1",
+      "NextQ": 1
+    }
+  },
+  {
+    "Q": 0,
+    "Marker": "1",
+    "ReferenceState": {
+      "MoveDirection": "Stop",
+      "SetupMarker": "1",
+      "NextQ": 1
+    }
+  },
+  {
+    "Q": 1,
+    "Marker": "1",
+    "ReferenceState": {
+      "MoveDirection": "Left",
+      "SetupMarker": " ",
+      "NextQ": 2
+    }
+  },
+  {
+    "Q": 2,
+    "Marker": "1",
+    "ReferenceState": {
+      "MoveDirection": "Right",
+      "SetupMarker": "1",
+      "NextQ": 2
+    }
+  },
+  {
+    "Q": 0,
+    "Marker": "0",
+    "ReferenceState": {
+      "MoveDirection": "Stop",
+      "SetupMarker": " ",
+      "NextQ": 1
+    }
+  },
+  {
+    "Q": 1,
+    "Marker": "0",
+    "ReferenceState": {
+      "MoveDirection": "Right",
+      "SetupMarker": "1",
+      "NextQ": 2
+    }
+  },
+  {
+    "Q": 2,
+    "Marker": "0",
+    "ReferenceState": {
+      "MoveDirection": "Right",
+      "SetupMarker": "2",
+      "NextQ": 1
+    }
+  }
+]

@@ -1,0 +1,35 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TuringMachine.Controls"
+             x:Class="TuringMachine.Controls.HistoryControl"
+             mc:Ignorable="d"  
+             FontSize="16"
+             d:DataContext="{d:DesignData /SampleData/RuleStateSampleData.xaml}"  >
+    <UserControl.Resources>
+        <local:NameApConverter x:Key="NameConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Margin="0,0,10,0">
+                <TextBlock HorizontalAlignment="Right"
+                    Text="{Binding Q,
+                    ConverterParameter='Current Q: ', 
+                    Converter={StaticResource NameConverter}}" Margin="5"/>
+                <TextBlock   HorizontalAlignment="Right"
+                             Text="{Binding Marker, 
+                    ConverterParameter='Current Marker: ',
+                    Converter={StaticResource NameConverter}}" Margin="5"/>
+            </StackPanel>
+            <StackPanel>
+            <TextBlock Text="{Binding ReferenceState,
+                ConverterParameter='RefState: ', 
+                Converter={StaticResource NameConverter}}" Margin="5"/>
+            <TextBlock Text="{Binding Previous, 
+                ConverterParameter='Previous: ', 
+                Converter={StaticResource NameConverter}}" Margin="5"/></StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
